@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | adolphの博客</title>
+  <title>关于卷积的趣解 | adolphの博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="心学门徒">
-<meta property="og:type" content="website">
-<meta property="og:title" content="adolphの博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="如何理解卷积 打巴掌1比如说你的老板命令你干活，你却到楼下打台球去了，后来被老板发现，他非常气愤，扇了你一巴掌（注意，这就是输入信号，脉冲），于是你的脸上会渐渐地（贱贱地）鼓起来一个包，你的脸就是一个系统，而鼓起来的包就是你的脸对巴掌的响应，好，这样就和信号系统建立起来意义对应的联系。下面还需要一些假设来保证论证的严谨：假定你的脸是线性时不变系统，也就是说，无论什么时候老板打你一巴掌，打在你脸的同">
+<meta name="keywords" content="数学,摘自知乎">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于卷积的趣解">
+<meta property="og:url" content="http://yoursite.com/2017/08/22/关于卷积的趣解/index.html">
 <meta property="og:site_name" content="adolphの博客">
-<meta property="og:description" content="心学门徒">
+<meta property="og:description" content="如何理解卷积 打巴掌1比如说你的老板命令你干活，你却到楼下打台球去了，后来被老板发现，他非常气愤，扇了你一巴掌（注意，这就是输入信号，脉冲），于是你的脸上会渐渐地（贱贱地）鼓起来一个包，你的脸就是一个系统，而鼓起来的包就是你的脸对巴掌的响应，好，这样就和信号系统建立起来意义对应的联系。下面还需要一些假设来保证论证的严谨：假定你的脸是线性时不变系统，也就是说，无论什么时候老板打你一巴掌，打在你脸的同">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-724258cbe70038cc271094344c9cc3c2_b.png">
+<meta property="og:updated_time" content="2017-08-22T02:37:41.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="adolphの博客">
-<meta name="twitter:description" content="心学门徒">
+<meta name="twitter:title" content="关于卷积的趣解">
+<meta name="twitter:description" content="如何理解卷积 打巴掌1比如说你的老板命令你干活，你却到楼下打台球去了，后来被老板发现，他非常气愤，扇了你一巴掌（注意，这就是输入信号，脉冲），于是你的脸上会渐渐地（贱贱地）鼓起来一个包，你的脸就是一个系统，而鼓起来的包就是你的脸对巴掌的响应，好，这样就和信号系统建立起来意义对应的联系。下面还需要一些假设来保证论证的严谨：假定你的脸是线性时不变系统，也就是说，无论什么时候老板打你一巴掌，打在你脸的同">
+<meta name="twitter:image" content="https://pic3.zhimg.com/v2-724258cbe70038cc271094344c9cc3c2_b.png">
   
     <link rel="alternative" href="/atom.xml" title="adolphの博客" type="application/atom+xml">
   
@@ -161,36 +165,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-关于卷积的趣解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/22/关于卷积的趣解/" class="archive-article-date">
-  	<time datetime="2017-08-22T02:26:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/22/关于卷积的趣解/">关于卷积的趣解</a>
+    <h1 class="article-title" itemprop="name">
+      关于卷积的趣解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/08/22/关于卷积的趣解/" class="archive-article-date">
+  	<time datetime="2017-08-22T02:26:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="如何理解卷积"><a href="#如何理解卷积" class="headerlink" title="如何理解卷积"></a>如何理解卷积</h2><hr>
+<h1 id="打巴掌"><a href="#打巴掌" class="headerlink" title="打巴掌"></a>打巴掌</h1><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">比如说你的老板命令你干活，你却到楼下打台球去了，后来被老板发现，他非常气愤，扇了你一巴掌（注意，这就是输入信号，脉冲），于是你的脸上会渐渐地（贱贱地）鼓起来一个包，你的脸就是一个系统，而鼓起来的包就是你的脸对巴掌的响应，好，这样就和信号系统建立起来意义对应的联系。下面还需要一些假设来保证论证的严谨：假定你的脸是线性时不变系统，也就是说，无论什么时候老板打你一巴掌，打在你脸的同一位置（这似乎要求你的脸足够光滑，如果你说你长了很多青春痘，甚至整个脸皮处处连续处处不可导，那难度太大了，我就无话可说了哈哈），你的脸上总是会在相同的时间间隔内鼓起来一个相同高度的包来，并且假定以鼓起来的包的大小作为系统输出。好了，那么，下面可以进入核心内容——卷积了！如果你每天都到地下去打台球，那么老板每天都要扇你一巴掌，不过当老板打你一巴掌后，你<span class="number">5</span>分钟就消肿了，所以时间长了，你甚至就适应这种生活了……如果有一天，老板忍无可忍，以<span class="number">0.5</span>秒的间隔开始不间断的扇你的过程，这样问题就来了，第一次扇你鼓起来的包还没消肿，第二个巴掌就来了，你脸上的包就可能鼓起来两倍高，老板不断扇你，脉冲不断作用在你脸上，效果不断叠加了，这样这些效果就可以求和了，结果就是你脸上的包的高度随时间变化的一个函数了（注意理解）；如果老板再狠一点，频率越来越高，以至于你都辨别不清时间间隔了，那么，求和就变成积分了。可以这样理解，在这个过程中的某一固定的时刻，你的脸上的包的鼓起程度和什么有关呢？和之前每次打你都有关！但是各次的贡献是不一样的，越早打的巴掌，贡献越小，所以这就是说，某一时刻的输出是之前很多次输入乘以各自的衰减系数之后的叠加而形成某一点的输出，然后再把不同时刻的输出点放在一起，形成一个函数，这就是卷积，卷积之后的函数就是你脸上的包的大小随时间变化的函数。本来你的包几分钟就可以消肿，可是如果连续打，几个小时也消不了肿了，这难道不是一种平滑过程么？反映到剑桥大学的公式上，f<span class="comment">(a)</span>就是第a个巴掌，g<span class="comment">(x-a)</span>就是第a个巴掌在x时刻的作用程度，乘起来再叠加就ok了，大家说是不是这个道理呢？我想这个例子已经非常形象了，你对卷积有了更加具体深刻的了解了吗？</div></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">假如你被别人打了一拳，这一拳会在<span class="number">1</span>小时疼痛消失[这一拳轻重不同，所以虽说都在一个小时消失，但是在<span class="number">1</span>个小时内感觉的疼痛也不一样。设最轻(注意)的一拳在一小时内的疼痛感觉函数为h(<span class="built_in">t</span>），二倍的最轻力度打你，疼痛感就是<span class="number">2</span>h(<span class="built_in">t</span>)对吧，f(<span class="built_in">n</span>)倍最轻力度，就是f(<span class="built_in">n</span>)h(<span class="built_in">t</span>)了吧]，当别人在一小时内在第一秒，第二秒，第三秒.....第六十秒……动武时，可设f(<span class="built_in">n</span>)为每次的轻重函数，这就是说在<span class="number">0</span>到<span class="number">2</span>小时内你会感觉疼，那么在这<span class="number">0</span>到<span class="number">2</span>小时的任意一个时刻的疼痛程度Y(<span class="built_in">t</span>)怎么表示呢？（自己先可以算一下，算出来的话下面的就不用看啦）——肯定是每拳的疼痛效果叠加啦既<span class="number">0</span>到<span class="built_in">n</span>的f(<span class="built_in">n</span>)h(<span class="built_in">t</span>-<span class="built_in">n</span>)相加，如f(<span class="number">1</span>)h（<span class="built_in">t</span>－<span class="number">1</span>）＋f(<span class="number">2</span>)h(<span class="built_in">t</span>-<span class="number">2</span>)……，当<span class="built_in">n</span>很小时，为<span class="number">0.00000001</span>时，就用积分符号啦。<span class="built_in">n</span>次抽象为τ就是我们平时的f(<span class="built_in">t</span>)与h(<span class="built_in">t</span>)的卷积啦！</div></pre></td></tr></table></figure>
+<p><img src="https://pic3.zhimg.com/v2-724258cbe70038cc271094344c9cc3c2_b.png" data-rawwidth="983" data-rawheight="516" class="origin_image zh-lightbox-thumb" width="983" data-original="https://pic3.zhimg.com/v2-724258cbe70038cc271094344c9cc3c2_r.png"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -206,126 +233,117 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/22/关于卷积的趣解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/21/windows-常用软件/" class="archive-article-date">
-  	<time datetime="2017-08-21T03:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/21/windows-常用软件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">windows 常用软件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/21/windows-常用软件/">windows 常用软件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何理解卷积"><span class="toc-number">1.</span> <span class="toc-text">如何理解卷积</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打巴掌"><span class="toc-number"></span> <span class="toc-text">打巴掌</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/21/name/" class="archive-article-date">
-  	<time datetime="2017-08-21T02:55:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/21/name/">name</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">这是第一个文件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/21/hello-world/" class="archive-article-date">
-  	<time datetime="2017-08-21T02:07:45.046Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/21/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -348,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

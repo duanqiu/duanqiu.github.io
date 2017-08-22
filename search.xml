@@ -3,6 +3,26 @@
   
     
     <entry>
+      <title><![CDATA[关于卷积的趣解]]></title>
+      <url>/2017/08/22/%E5%85%B3%E4%BA%8E%E5%8D%B7%E7%A7%AF%E7%9A%84%E8%B6%A3%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<h2 id="如何理解卷积"><a href="#如何理解卷积" class="headerlink" title="如何理解卷积"></a>如何理解卷积</h2><hr>
+<h1 id="打巴掌"><a href="#打巴掌" class="headerlink" title="打巴掌"></a>打巴掌</h1><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">比如说你的老板命令你干活，你却到楼下打台球去了，后来被老板发现，他非常气愤，扇了你一巴掌（注意，这就是输入信号，脉冲），于是你的脸上会渐渐地（贱贱地）鼓起来一个包，你的脸就是一个系统，而鼓起来的包就是你的脸对巴掌的响应，好，这样就和信号系统建立起来意义对应的联系。下面还需要一些假设来保证论证的严谨：假定你的脸是线性时不变系统，也就是说，无论什么时候老板打你一巴掌，打在你脸的同一位置（这似乎要求你的脸足够光滑，如果你说你长了很多青春痘，甚至整个脸皮处处连续处处不可导，那难度太大了，我就无话可说了哈哈），你的脸上总是会在相同的时间间隔内鼓起来一个相同高度的包来，并且假定以鼓起来的包的大小作为系统输出。好了，那么，下面可以进入核心内容——卷积了！如果你每天都到地下去打台球，那么老板每天都要扇你一巴掌，不过当老板打你一巴掌后，你<span class="number">5</span>分钟就消肿了，所以时间长了，你甚至就适应这种生活了……如果有一天，老板忍无可忍，以<span class="number">0.5</span>秒的间隔开始不间断的扇你的过程，这样问题就来了，第一次扇你鼓起来的包还没消肿，第二个巴掌就来了，你脸上的包就可能鼓起来两倍高，老板不断扇你，脉冲不断作用在你脸上，效果不断叠加了，这样这些效果就可以求和了，结果就是你脸上的包的高度随时间变化的一个函数了（注意理解）；如果老板再狠一点，频率越来越高，以至于你都辨别不清时间间隔了，那么，求和就变成积分了。可以这样理解，在这个过程中的某一固定的时刻，你的脸上的包的鼓起程度和什么有关呢？和之前每次打你都有关！但是各次的贡献是不一样的，越早打的巴掌，贡献越小，所以这就是说，某一时刻的输出是之前很多次输入乘以各自的衰减系数之后的叠加而形成某一点的输出，然后再把不同时刻的输出点放在一起，形成一个函数，这就是卷积，卷积之后的函数就是你脸上的包的大小随时间变化的函数。本来你的包几分钟就可以消肿，可是如果连续打，几个小时也消不了肿了，这难道不是一种平滑过程么？反映到剑桥大学的公式上，f<span class="comment">(a)</span>就是第a个巴掌，g<span class="comment">(x-a)</span>就是第a个巴掌在x时刻的作用程度，乘起来再叠加就ok了，大家说是不是这个道理呢？我想这个例子已经非常形象了，你对卷积有了更加具体深刻的了解了吗？</div></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">假如你被别人打了一拳，这一拳会在<span class="number">1</span>小时疼痛消失[这一拳轻重不同，所以虽说都在一个小时消失，但是在<span class="number">1</span>个小时内感觉的疼痛也不一样。设最轻(注意)的一拳在一小时内的疼痛感觉函数为h(<span class="built_in">t</span>），二倍的最轻力度打你，疼痛感就是<span class="number">2</span>h(<span class="built_in">t</span>)对吧，f(<span class="built_in">n</span>)倍最轻力度，就是f(<span class="built_in">n</span>)h(<span class="built_in">t</span>)了吧]，当别人在一小时内在第一秒，第二秒，第三秒.....第六十秒……动武时，可设f(<span class="built_in">n</span>)为每次的轻重函数，这就是说在<span class="number">0</span>到<span class="number">2</span>小时内你会感觉疼，那么在这<span class="number">0</span>到<span class="number">2</span>小时的任意一个时刻的疼痛程度Y(<span class="built_in">t</span>)怎么表示呢？（自己先可以算一下，算出来的话下面的就不用看啦）——肯定是每拳的疼痛效果叠加啦既<span class="number">0</span>到<span class="built_in">n</span>的f(<span class="built_in">n</span>)h(<span class="built_in">t</span>-<span class="built_in">n</span>)相加，如f(<span class="number">1</span>)h（<span class="built_in">t</span>－<span class="number">1</span>）＋f(<span class="number">2</span>)h(<span class="built_in">t</span>-<span class="number">2</span>)……，当<span class="built_in">n</span>很小时，为<span class="number">0.00000001</span>时，就用积分符号啦。<span class="built_in">n</span>次抽象为τ就是我们平时的f(<span class="built_in">t</span>)与h(<span class="built_in">t</span>)的卷积啦！</div></pre></td></tr></table></figure>
+<p><img src="https://pic3.zhimg.com/v2-724258cbe70038cc271094344c9cc3c2_b.png" data-rawwidth="983" data-rawheight="516" class="origin_image zh-lightbox-thumb" width="983" data-original="https://pic3.zhimg.com/v2-724258cbe70038cc271094344c9cc3c2_r.png"></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 摘自知乎 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[windows 常用软件]]></title>
       <url>/2017/08/21/windows-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h1 id="windows软件备忘录"><a href="#windows软件备忘录" class="headerlink" title="windows软件备忘录"></a>windows软件备忘录</h1><hr>
